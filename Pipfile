@@ -9,7 +9,8 @@ pandas = "*"
 torch = "*"
 torchvision = "*"
 matplotlib = "*"
-transformers = "*"
+scikit-learn = "*"
+torchinfo = "*"
 
 [dev-packages]
 

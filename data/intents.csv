@@ -1,0 +1,451 @@
+Text,Label
+"Gimme a movie, bitch.",Question
+Gimme a movie.,Question
+What movie do you recommend.,Question
+Whats your favorite movie?,Question
+I want to see a movie right now.,Question
+"Top 3 movies, go!",Question
+Gimme the movie.,Question
+"Im so bored, gimme a movie.",Question
+Could you please recommend me a movie to watch.,Question
+What movies are good right now?,Question
+I want a good horror movie right now.,Genre
+Any romance movies to recommend?,Genre
+Any movies to recommend?,Question
+"Im craving a movie right now, please help.",Question
+Movie please.,Question
+Recommend.,Question
+Movie movie movie!,Question
+Give me a good horror movie please!,Genre
+I love horror movies.,Genre
+Recs please...,Question
+I really need a horror recommendation.,Genre
+I want to see a horror movie.,Genre
+I want to see a movie.,Question
+Any good movies lately?,Question
+Are there any good movies?,Question
+Are there any good horror movies?,Genre
+Can you recommend me a good movie.,Question
+Best movies right now?,Question
+Best horror movies right now?,Genre
+Movie time.,Question
+Hand me a movie.,Question
+Horror movie please.,Genre
+Give me movie.,Question
+I request a movie.,Question
+At my behest I request a movie.,Question
+Suggest a movie yo.,Question
+Your highness could I have a movie?,Question
+"Gimme a film, bitch.",Question
+Gimme a film.,Question
+What film do you recommend.,Question
+Whats your favorite film?,Question
+I want to see a film right now.,Question
+"Top 3 films, go!",Question
+Gimme the film.,Question
+"Im so bored, gimme a film.",Question
+Could you please recommend me a film to watch.,Question
+What films are good right now?,Question
+I want a good horror film right now.,Genre
+Any romance films to recommend?,Genre
+Any films to recommend?,Question
+"Im craving a film right now, please help.",Question
+film please.,Question
+film film film!,Question
+Give me a good horror film please!,Genre
+I love horror films.,Genre
+I want to see a horror film.,Genre
+I want to see a film.,Question
+Any good films lately?,Question
+Are there any good films?,Question
+Are there any good horror films?,Genre
+Can you recommend me a good film.,Question
+Best films right now?,Question
+Best horror films right now?,Genre
+film time.,Question
+Hand me a film.,Question
+Horror film please.,Genre
+Give me film.,Question
+I request a film.,Question
+At my behest I request a film.,Question
+Suggest a film yo.,Question
+Your highness could I have a film?,Question
+I want a good comedy movie right now.,Genre
+Give me a good comedy movie please!,Genre
+I love comedy movies.,Genre
+I really need a comedy recommendation.,Genre
+I want to see a comedy movie.,Genre
+Are there any good comedy movies?,Genre
+Best comedy movies right now?,Genre
+comedy movie please.,Genre
+I want a good comedy film right now.,Genre
+Give me a good comedy film please!,Genre
+I love comedy films.,Genre
+I really need a comedy recommendation.,Genre
+I want to see a comedy film.,Genre
+Are there any good comedy films?,Genre
+Best comedy films right now?,Genre
+comedy film please.,Genre
+I want a good romance film right now.,Genre
+Give me a good romance film please!,Genre
+I love romance films.,Genre
+I really need a romance recommendation.,Genre
+I want to see a romance film.,Genre
+Are there any good romance films?,Genre
+Best romance films right now?,Genre
+romance film please.,Genre
+I want a good romance movie right now.,Genre
+Give me a good romance movie please!,Genre
+I love romance movies.,Genre
+I really need a romance recommendation.,Genre
+I want to see a romance movie.,Genre
+Are there any good romance movies?,Genre
+Best romance movies right now?,Genre
+romance movie please.,Genre
+I want a good action movie right now.,Genre
+Give me a good action movie please!,Genre
+I love action movies.,Genre
+I really need a action recommendation.,Genre
+I want to see a action movie.,Genre
+Are there any good action movies?,Genre
+Best action movies right now?,Genre
+action movie please.,Genre
+I want a good action film right now.,Genre
+Give me a good action film please!,Genre
+I love action films.,Genre
+I really need a action recommendation.,Genre
+I want to see a action film.,Genre
+Are there any good action films?,Genre
+Best action films right now?,Genre
+action film please.,Genre
+I want a good adventure film right now.,Genre
+Give me a good adventure film please!,Genre
+I love adventure films.,Genre
+I really need a adventure recommendation.,Genre
+I want to see a adventure film.,Genre
+Are there any good adventure films?,Genre
+Best adventure films right now?,Genre
+adventure film please.,Genre
+I want a good adventure movie right now.,Genre
+Give me a good adventure movie please!,Genre
+I love adventure movies.,Genre
+I really need a adventure recommendation.,Genre
+I want to see a adventure movie.,Genre
+Are there any good adventure movies?,Genre
+Best adventure movies right now?,Genre
+adventure movie please.,Genre
+I want a good thriller movie right now.,Genre
+Give me a good thriller movie please!,Genre
+I love thriller movies.,Genre
+I really need a thriller recommendation.,Genre
+I want to see a thriller movie.,Genre
+Are there any good thriller movies?,Genre
+Best thriller movies right now?,Genre
+thriller movie please.,Genre
+I want a good thriller film right now.,Genre
+Give me a good thriller film please!,Genre
+I love thriller films.,Genre
+I really need a thriller recommendation.,Genre
+I want to see a thriller film.,Genre
+Are there any good thriller films?,Genre
+Best thriller films right now?,Genre
+thriller film please.,Genre
+I want a good sci-fi film right now.,Genre
+Give me a good sci-fi film please!,Genre
+I love sci-fi films.,Genre
+I really need a sci-fi recommendation.,Genre
+I want to see a sci-fi film.,Genre
+Are there any good sci-fi films?,Genre
+Best sci-fi films right now?,Genre
+sci-fi film please.,Genre
+I want a good sci-fi movie right now.,Genre
+Give me a good sci-fi movie please!,Genre
+I love sci-fi movies.,Genre
+I really need a sci-fi recommendation.,Genre
+I want to see a sci-fi movie.,Genre
+Are there any good sci-fi movies?,Genre
+Best sci-fi movies right now?,Genre
+sci-fi movie please.,Genre
+I want a good biography movie right now.,Genre
+Give me a good biography movie please!,Genre
+I love biography movies.,Genre
+I really need a biography recommendation.,Genre
+I want to see a biography movie.,Genre
+Are there any good biography movies?,Genre
+Best biography movies right now?,Genre
+biography movie please.,Genre
+I want a good biography film right now.,Genre
+Give me a good biography film please!,Genre
+I love biography films.,Genre
+I really need a biography recommendation.,Genre
+I want to see a biography film.,Genre
+Are there any good biography films?,Genre
+Best biography films right now?,Genre
+biography film please.,Genre
+I want a good mystery film right now.,Genre
+Give me a good mystery film please!,Genre
+I love mystery films.,Genre
+I really need a mystery recommendation.,Genre
+I want to see a mystery film.,Genre
+Are there any good mystery films?,Genre
+Best mystery films right now?,Genre
+mystery film please.,Genre
+I want a good mystery movie right now.,Genre
+Give me a good mystery movie please!,Genre
+I love mystery movies.,Genre
+I really need a mystery recommendation.,Genre
+I want to see a mystery movie.,Genre
+Are there any good mystery movies?,Genre
+Best mystery movies right now?,Genre
+mystery movie please.,Genre
+I want a good family movie right now.,Genre
+Give me a good family movie please!,Genre
+I love family movies.,Genre
+I really need a family recommendation.,Genre
+I want to see a family movie.,Genre
+Are there any good family movies?,Genre
+Best family movies right now?,Genre
+family movie please.,Genre
+I want a good family film right now.,Genre
+Give me a good family film please!,Genre
+I love family films.,Genre
+I really need a family recommendation.,Genre
+I want to see a family film.,Genre
+Are there any good family films?,Genre
+Best family films right now?,Genre
+family film please.,Genre
+I want a good animation film right now.,Genre
+Give me a good animation film please!,Genre
+I love animation films.,Genre
+I really need a animation recommendation.,Genre
+I want to see a animation film.,Genre
+Are there any good animation films?,Genre
+Best animation films right now?,Genre
+animation film please.,Genre
+I want a good animation movie right now.,Genre
+Give me a good animation movie please!,Genre
+I love animation movies.,Genre
+I really need a animation recommendation.,Genre
+I want to see a animation movie.,Genre
+Are there any good animation movies?,Genre
+Best animation movies right now?,Genre
+animation movie please.,Genre
+I want a good cartoon movie right now.,Genre
+Give me a good cartoon movie please!,Genre
+I love cartoon movies.,Genre
+I really need a cartoon recommendation.,Genre
+I want to see a cartoon movie.,Genre
+Are there any good cartoon movies?,Genre
+Best cartoon movies right now?,Genre
+cartoon movie please.,Genre
+I want a good cartoon film right now.,Genre
+Give me a good cartoon film please!,Genre
+I love cartoon films.,Genre
+I really need a cartoon recommendation.,Genre
+I want to see a cartoon film.,Genre
+Are there any good cartoon films?,Genre
+Best cartoon films right now?,Genre
+cartoon film please.,Genre
+I want a good scary film right now.,Genre
+Give me a good scary film please!,Genre
+I love scary films.,Genre
+I really need a scary recommendation.,Genre
+I want to see a scary film.,Genre
+Are there any good scary films?,Genre
+Best scary films right now?,Genre
+scary film please.,Genre
+I want a good scary movie right now.,Genre
+Give me a good scary movie please!,Genre
+I love scary movies.,Genre
+I really need a scary recommendation.,Genre
+I want to see a scary movie.,Genre
+Are there any good scary movies?,Genre
+Best scary movies right now?,Genre
+scary movie please.,Genre
+I want a good drama movie right now.,Genre
+Give me a good drama movie please!,Genre
+I love drama movies.,Genre
+I really need a drama recommendation.,Genre
+I want to see a drama movie.,Genre
+Are there any good drama movies?,Genre
+Best drama movies right now?,Genre
+drama movie please.,Genre
+I want a good drama film right now.,Genre
+Give me a good drama film please!,Genre
+I love drama films.,Genre
+I really need a drama recommendation.,Genre
+I want to see a drama film.,Genre
+Are there any good drama films?,Genre
+Best drama films right now?,Genre
+drama film please.,Genre
+I want a good music film right now.,Genre
+Give me a good music film please!,Genre
+I love music films.,Genre
+I really need a music recommendation.,Genre
+I want to see a music film.,Genre
+Are there any good music films?,Genre
+Best music films right now?,Genre
+music film please.,Genre
+I want a good music movie right now.,Genre
+Give me a good music movie please!,Genre
+I love music movies.,Genre
+I really need a music recommendation.,Genre
+I want to see a music movie.,Genre
+Are there any good music movies?,Genre
+Best music movies right now?,Genre
+music movie please.,Genre
+I want a good musical right now.,Genre
+Give me a good musical please!,Genre
+I love musicals.,Genre
+I really need a musical recommendation.,Genre
+I want to see a musical.,Genre
+Are there any good musicals?,Genre
+Best musicals right now?,Genre
+musical please.,Genre
+I want a good history film right now.,Genre
+Give me a good history film please!,Genre
+I love history films.,Genre
+I really need a history recommendation.,Genre
+I want to see a history film.,Genre
+Are there any good history films?,Genre
+Best history films right now?,Genre
+history film please.,Genre
+I want a good history movie right now.,Genre
+Give me a good history movie please!,Genre
+I love history movies.,Genre
+I really need a history recommendation.,Genre
+I want to see a history movie.,Genre
+Are there any good history movies?,Genre
+Best history movies right now?,Genre
+history movie please.,Genre
+I want a good fantasy movie right now.,Genre
+Give me a good fantasy movie please!,Genre
+I love fantasy movies.,Genre
+I really need a fantasy recommendation.,Genre
+I want to see a fantasy movie.,Genre
+Are there any good fantasy movies?,Genre
+Best fantasy movies right now?,Genre
+fantasy movie please.,Genre
+I want a good fantasy film right now.,Genre
+Give me a good fantasy film please!,Genre
+I love fantasy films.,Genre
+I really need a fantasy recommendation.,Genre
+I want to see a fantasy film.,Genre
+Are there any good fantasy films?,Genre
+Best fantasy films right now?,Genre
+fantasy film please.,Genre
+I want a good crime film right now.,Genre
+Give me a good crime film please!,Genre
+I love crime films.,Genre
+I really need a crime recommendation.,Genre
+I want to see a crime film.,Genre
+Are there any good crime films?,Genre
+Best crime films right now?,Genre
+crime film please.,Genre
+I want a good crime movie right now.,Genre
+Give me a good crime movie please!,Genre
+I love crime movies.,Genre
+I really need a crime recommendation.,Genre
+I want to see a crime movie.,Genre
+Are there any good crime movies?,Genre
+Best crime movies right now?,Genre
+crime movie please.,Genre
+Idk from any time period,Time
+any time,Time
+newer movies,Time
+older movies,Time
+recent movies,Time
+2021,Time
+2020,Time
+2019,Time
+2018,Time
+2017,Time
+2016,Time
+2015,Time
+2014,Time
+2013,Time
+2012,Time
+2011,Time
+2010,Time
+2009,Time
+2008,Time
+2007,Time
+2006,Time
+2005,Time
+2004,Time
+2003,Time
+2002,Time
+2001,Time
+2000,Time
+From 2021,Time
+Newer than 2021,Time
+After 2021,Time
+Older than 2021,Time
+before 2021,Time
+From 2020,Time
+Newer than 2020,Time
+After 2020,Time
+Older than 2020,Time
+before 2020,Time
+From 2019,Time
+Newer than 2019,Time
+After 2019,Time
+Older than 2019,Time
+before 2019,Time
+From 2018,Time
+Newer than 2018,Time
+After 2018,Time
+Older than 2018,Time
+before 2018,Time
+I want highly rated movies,Rating
+high ratings,Rating
+good movies,Rating
+bad movies,Rating
+low ratings,Rating
+lowly rated movies,Rating
+poorly rated movies,Rating
+best movies,Rating
+worst movies,Rating
+I want a movie starring will smith,Cast
+"A movie with will smith, jared leto",Cast
+"I want a movie starring Christian Bale, Heath Ledger, Aaron Eckhart,Michael Caine",Cast
+A movie where christian bale is the lead actor,Cast
+a movie with heath ledger as the villain,Cast
+a movie with good cast,Cast
+a movie with celebrities,Cast
+Goodbye,End
+Bye,End
+sayonara,End
+thank you,End
+done,End
+finish,End
+end,End
+fini,End
+the end,End
+that's all,End
+arigato,End
+finished,End
+that's it,End
+thanks for the recommendation,End
+merci,End
+au revoir,End
+okie,End
+ok,End
+Hey,Start
+Hi,Start
+Start,Start
+Hi Bot,Start
+Hello Bot,Start
+Bonjour Bot,Start
+Bonjour,Start
+Greetings,Start
+Greetings sir,Start
+Howdy sir,Start
+Hellooooo,Start
+Hello,Start
+Hao,Start
+Ni hao,Start
+Yo,Start
+Can you hear me?,Start
+Bro,Start
+Hey Bro,Start
