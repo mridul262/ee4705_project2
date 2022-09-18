@@ -8,7 +8,7 @@ I want to see a movie right now.,Question
 Gimme the movie.,Question
 "Im so bored, gimme a movie.",Question
 Could you please recommend me a movie to watch.,Question
-What movies are good right now?,Question
+What movies are good right now?,Rating
 I want a good horror movie right now.,Genre
 Any romance movies to recommend?,Genre
 Any movies to recommend?,Question
@@ -22,11 +22,11 @@ Recs please...,Question
 I really need a horror recommendation.,Genre
 I want to see a horror movie.,Genre
 I want to see a movie.,Question
-Any good movies lately?,Question
-Are there any good movies?,Question
+Any good movies lately?,Rating
+Are there any good movies?,Rating
 Are there any good horror movies?,Genre
-Can you recommend me a good movie.,Question
-Best movies right now?,Question
+Can you recommend me a good movie.,Rating
+Best movies right now?,Rating
 Best horror movies right now?,Genre
 Movie time.,Question
 Hand me a movie.,Question
@@ -449,3 +449,23 @@ Yo,Start
 Can you hear me?,Start
 Bro,Start
 Hey Bro,Start
+Something after 2019?,Time
+Something newer than 2015,Time
+Maybe something older than 2015?,Time
+perhaps something newer than 2017,Time
+Perhaps a horror movie?,Genre
+Perhaps an action movie?,Genre
+perhaps an adventure film!,Genre
+Could you recommend me a good action movie?,Genre
+I'd like a horror film,Genre
+I'd like to see a good drama film,Genre
+What are some good horror movies?,Genre
+Maybe an action film would be suitable?,Genre
+I'd love some romantic movie recommendations,Genre
+I'm down for some romance,Genre
+I'm down for some thrills and chills,Genre
+What are the latest movies?,Time
+What are some newly released films?,Time
+What are the oldest movies?,Time
+Preferably something that's new,Time
+Preferably something that is recent,Time
