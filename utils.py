@@ -153,7 +153,7 @@ def find_relative_field(field, value, condition, inputDataFrame):
     return returnData
 
 def find_keywords_field(data_frame, message_arr, field, field_type):
-  """Returns a dataframe containing the filtered movies based on the field, the type of the field and the input message
+    """Returns a dataframe containing the filtered movies based on the field, the type of the field and the input message
 
     Args:
         data_frame (pandas.DataFrame): Input Dataframe that needs to be filtered
@@ -163,42 +163,37 @@ def find_keywords_field(data_frame, message_arr, field, field_type):
 
     Returns:
         pandas.DataFrame: the DataFame containing the filtered movie data
-  """
-  if field_type == 'VALUE':
-    if field in field_dictonary:
-      local_field_dict = field_dictonary[field]
-      for i in message_arr:
-        if i in local_field_dict:
-          i = local_field_dict[i]
-        if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
-          return find_field_value(field, [i.title()], data_frame)
+    """
+    if field_type == 'VALUE':
+        if field in field_dictonary:
+            local_field_dict = field_dictonary[field]
+            for i in message_arr:
+                if i in local_field_dict:
+                    i = local_field_dict[i]
+                if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
+                    return find_field_value(field, [i.title()], data_frame)
+        else:
+            for i in message_arr:
+                if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
+                    return find_field_value(field, [i.title()], data_frame)
+    elif field_type == 'RELATIVE':
+        if field in field_dictonary:
+            local_field_dict = field_dictonary[field]
+            for i in message_arr:
+                if i in local_field_dict:
+                    i = local_field_dict[i]
+                    if field in field_benchmark_dictionary:
+                        value = field_benchmark_dictionary[field]
+                        if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
+                            return find_relative_field(field, value, i, data_frame)
     else:
-      for i in message_arr:
-        print(i)
-        if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
-          print('inside if')
-          return find_field_value(field, [i.title()], data_frame)
-  elif field_type == 'RELATIVE':
-    if field in field_dictonary:
-      local_field_dict = field_dictonary[field]
-      for i in message_arr:
-        if i in local_field_dict:
-          i = local_field_dict[i]
-          print(i)
-          if field in field_benchmark_dictionary:
-            print(field)
-            value = field_benchmark_dictionary[field]
+        for i in message_arr:
             if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
-              return find_relative_field(field, value, i, data_frame)
-    else:
-      for i in message_arr:
-        print(i)
-        if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
-          print('inside if')
-          return find_relative_field(field, value, i, data_frame)
+                return find_relative_field(field, value, i, data_frame)
 
 def get_response(message, movie_data):
-    """For a given message input a text response is returned
+    """For a given message input a text response is returned along with the filtered dataframe.
+    Use this with the tts and stt functions
 
     Args:
         message (str): a str containing the message that needs to be responded to
@@ -228,9 +223,6 @@ def get_response(message, movie_data):
       response = 'whose movies would you like to watch'
     elif intent == 'end':
       response = 'Goodbye!'
-      print(movie_data)
-      print(response)
-      return movie_data
     return response, movie_data
 
 
