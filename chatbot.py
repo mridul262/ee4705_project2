@@ -8,15 +8,15 @@ import pyttsx3
 
 def getChatbotTextResponse(inputText, movieData, intent_state, engine):
     if len(inputText) == 0:
-        return intent_state
+        return intent_state, movieData
     print("Input text detected: " + inputText)
     print()
     print("Chatbot Response: ")
-    response, movie_data, intent_state = get_response(inputText, movieData, intent_state)
+    response, movieData, intent_state = get_response(inputText, movieData, intent_state)
     engine.say(response)
     engine.runAndWait()
     print()
-    return intent_state
+    return intent_state, movieData
 
 def main():
     # Load DeepSpeech model
@@ -66,7 +66,7 @@ def main():
             if spinner: spinner.stop()
             text = stream_context.finishStream()
 
-            intent_state = getChatbotTextResponse(text, movieData, intent_state, engine)
+            intent_state, movieData = getChatbotTextResponse(text, movieData, intent_state, engine)
             stream_context = model.createStream()
  
 if __name__ == '__main__':
