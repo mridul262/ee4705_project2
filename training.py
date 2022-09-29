@@ -188,11 +188,4 @@ for epoch in range(epochs):
     # torch.backends.cudnn.deterministic = True
     # torch.backends.cudnn.benchmark = False
     print(f'\nTraining Loss: {train_loss:.3f}')
-
-torch.save(model.state_dict(), './trained_models/task_nlp_trained.pkl')
-
-plt.plot([epoch for epoch in range(epochs)], train_losses)
-plt.title('Loss vs Epochs')
-plt.xlabel('Epochs')
-plt.ylabel('Training Loss')
-# print(train_losses)
+print('train_losses len pt2 =', len(train_losses))
