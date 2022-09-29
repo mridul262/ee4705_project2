@@ -202,7 +202,7 @@ def find_keywords_field(data_frame, message_arr, field, field_type):
 
 def get_film_title(movie_data):
   return_string = 'Here are some movies I\'d like to recommend: '
-  if movie_data.shape[0] > 0:
+  if movie_data and movie_data.shape[0] > 0:
     total_rows = movie_data.shape[0]
     loop_range = min(total_rows, 3)
     # return a maximum of three movies
