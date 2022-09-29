@@ -62,17 +62,6 @@ class BERT_Arch(nn.Module):
       x = self.softmax(x)
       return x
 
-# # All the intents/classes the nlp model will be classified into
-# df = pd.read_csv("./data/intents.csv")
-# df.head()
-
-# # Converting the labels into encodings
-# le = LabelEncoder()
-# df['Label_Encoded'] = le.fit_transform(df['Label'])
-# df.head()
-# # check class distribution
-# df['Label_Encoded'].value_counts(normalize = True)
-
 # In this example we have used all the utterances for training purpose
 train_text, train_labels = df['Text'], df['Label_Encoded']
 # Load the DistilBert tokenizer

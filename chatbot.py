@@ -8,7 +8,7 @@ import pyttsx3
 
 def getChatbotTextResponse(inputText, movieData, intent_state, engine):
     if len(inputText) == 0:
-        return
+        return intent_state
     print("Input text detected: " + inputText)
     print()
     print("Chatbot Response: ")
