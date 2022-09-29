@@ -377,6 +377,54 @@ recent movies,Time
 2002,Time
 2001,Time
 2000,Time
+twenty twenty two,Time
+twenty twenty one,Time
+twenty twenty,Time
+two thousand and twenty two,Time
+two thousand and twenty one,Time
+two thousand and twenty,Time
+twenty eleven,Time
+twenty twelve,Time
+twenty thirteen,Time
+twenty fourteen,Time
+twenty fifteen,Time
+twenty sixteen,Time
+twenty seventeen,Time
+twenty eighteen,Time
+twenty nineteen,Time
+two thousand and one,Time
+two thousand and two,Time
+two thousand and three,Time
+two thousand and four,Time
+two thousand and five,Time
+two thousand and six,Time
+two thousand and seven,Time
+two thousand and eight,Time
+two thousand and nine,Time
+two thousand and ten,Time
+two thousand one,Time
+two thousand two,Time
+two thousand three,Time
+two thousand four,Time
+two thousand five,Time
+two thousand six,Time
+two thousand seven,Time
+two thousand eight,Time
+two thousand nine,Time
+two thousand ten,Time
+two thousand thirteen,Time
+two thousand fourteen,Time
+two thousand eighteen,Time
+two thousand eleven,Time
+two thousand sixteen,Time
+nineteen eighty nine,Time
+nineteen seventy eight,Time
+nineteen ninety two,Time
+nineteen ninety five,Time
+nineteen fifty,Time
+nineteen sixty,Time
+nineteen fourty,Time
+nineteen thirty,Time
 From 2021,Time
 Newer than 2021,Time
 After 2021,Time
@@ -406,13 +454,58 @@ lowly rated movies,Rating
 poorly rated movies,Rating
 best movies,Rating
 worst movies,Rating
-I want a movie starring will smith,Cast
-"A movie with will smith, jared leto",Cast
-"I want a movie starring Christian Bale, Heath Ledger, Aaron Eckhart,Michael Caine",Cast
-A movie where christian bale is the lead actor,Cast
-a movie with heath ledger as the villain,Cast
-a movie with good cast,Cast
-a movie with celebrities,Cast
+I want a movie directed by James Gunn,Cast
+"Movie by Ridley Scott",Cast
+"A movie directed by Shyamalan",Cast
+A movie where David Ayer is the director,Cast
+a movie with Denis Villeneuve as director,Cast
+Director is John Lee Hancock,Cast
+Zack Snyder,Cast
+Ben Affleck,Cast
+Sam Raimi,Cast
+Oliver Stone,Cast
+April Mullen,Cast
+Guillermo del Toro,Cast
+Judd Apatow,Cast
+James Wan,Cast
+Peyton Reed,Cast
+Quentin Tarantino,Cast
+J.J. Abrams,Cast
+Tim Burton,Cast
+James Gunn,Cast
+Ridley Scott,Cast
+David Ayer,Cast
+Ben Jones,Cast
+Elizabeth Holmes,Cast
+Stephen King,Cast
+Joss Whedon,Cast
+David Attenborough,Cast
+Martin Scoresese,Cast
+Katie Holmes,Cast
+Francis Franz,Cast
+Matt Reeves,Cast
+Ben Stiller,Cast
+Mel Gibson,Cast
+Marc Webb,Cast
+Eli Roth,Cast
+David Fincher,Cast
+Fred Wolf,Cast
+Jennifer Kent,Cast
+A movie by Steven Spielberg please,Cast
+Steven Spielberg,Cast
+Director is Mike Flanagan,Cast
+Mike Flanagan,Cast
+Movie with Woody Allen as director,Cast
+Woody Allen,Cast
+John Watts,Cast
+Ryan Coogler,Cast
+Ben Stiller is director,Cast
+Ben Stiller,Cast
+Jon Favreau directs,Cast
+Jon Favreau,Cast
+John Stockwell directs,Cast
+john Stockwell,Cast
+Beth Harmon,Cast
 Goodbye,End
 Bye,End
 sayonara,End
