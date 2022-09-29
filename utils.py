@@ -212,6 +212,7 @@ def get_film_title(movie_data):
         return_string += ', '
   else:
     return_string = 'Sorry, no movies matched your filter.'
+  return return_string
       
 
 def get_response(message, movie_data, intent_state):
@@ -246,9 +247,9 @@ def get_response(message, movie_data, intent_state):
         response = 'how good should the movie be?'
       elif intent == 'rating':
         movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
-        response = 'ok! Here are some recommendations for you: '
-      elif intent == 'end':
         response = get_film_title(movie_data)
+      elif intent == 'end':
+        response = 'Goodbye'
       intent_state += 1
     return response, movie_data, intent_state
 
