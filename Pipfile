@@ -11,6 +11,8 @@ torchvision = "*"
 matplotlib = "*"
 scikit-learn = "*"
 torchinfo = "*"
+webrtcvad = "*"
+halo = "*"
 
 [dev-packages]
 

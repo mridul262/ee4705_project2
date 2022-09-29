@@ -6,16 +6,17 @@ from utils import get_response
 import pandas as pd
 import pyttsx3
 
-def getChatbotTextResponse(inputText, movieData, engine):
+def getChatbotTextResponse(inputText, movieData, intent_state, engine):
     if len(inputText) == 0:
         return
     print("Input text detected: " + inputText)
     print()
     print("Chatbot Response: ")
-    response = get_response(inputText, movieData)
-    engine.say(response[0])
+    response, movie_data, intent_state = get_response(inputText, movieData, intent_state)
+    engine.say(response)
     engine.runAndWait()
     print()
+    return intent_state
 
 def main():
     # Load DeepSpeech model
@@ -54,6 +55,8 @@ def main():
     engine.setProperty('voice', voices[1].id)
     engine.setProperty('rate', 150)
 
+    # For Intent Tracking
+    intent_state = 0
     # Listen for audio, feed to NLU, play response
     for frame in frames:
         if frame is not None:
@@ -63,7 +66,7 @@ def main():
             if spinner: spinner.stop()
             text = stream_context.finishStream()
 
-            getChatbotTextResponse(text, movieData, engine)
+            intent_state = getChatbotTextResponse(text, movieData, intent_state, engine)
             stream_context = model.createStream()
  
 if __name__ == '__main__':

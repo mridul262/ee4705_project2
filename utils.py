@@ -27,6 +27,10 @@ df.head()
 # check class distribution
 df['Label_Encoded'].value_counts(normalize = True)
 
+CLASS_LABELS = le.classes_
+CLASS_LABELS_ENCODED = le.transform(le.classes_)
+CHATBOT_SEQUENCE = ['Start', 'Question', 'Genre', 'Time', 'Cast', 'Rating', 'End']
+
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 model = BERT_Arch(getBertModel())
 model.load_state_dict(torch.load('./trained_models/task_nlp_trained.pkl'))
@@ -86,6 +90,8 @@ field_benchmark_dictionary = {
   'Rating': BENCHMARK_RATING,
 }
 
+
+
 # Functions #
 
 def get_prediction(str):
@@ -124,7 +130,10 @@ def find_field_value(field, values, inputDataFrame):
     """
     returnData = inputDataFrame
     for value in values:
-       returnData = returnData[returnData[field].str.contains(value, regex=False)]
+       returnData = returnData[returnData[field].str.contains(value + ',', regex=False)]
+       if returnData.shape[0] == 0:
+        returnData = inputDataFrame
+        returnData = returnData[returnData[field].str.contains(value + ' ', regex=False)]
     return returnData
 
 def find_relative_field(field, value, condition, inputDataFrame):
@@ -191,7 +200,21 @@ def find_keywords_field(data_frame, message_arr, field, field_type):
             if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
                 return find_relative_field(field, value, i, data_frame)
 
-def get_response(message, movie_data):
+def get_film_title(movie_data):
+  return_string = 'Here are some movies I\'d like to recommend: '
+  if movie_data.shape[0] > 0:
+    total_rows = movie_data.shape[0]
+    loop_range = min(total_rows, 3)
+    # return a maximum of three movies
+    for i in range(loop_range):
+      return_string += movie_data.iloc[i]['Title']
+      if i < (loop_range - 1):
+        return_string += ', '
+  else:
+    return_string = 'Sorry, no movies matched your filter.'
+      
+
+def get_response(message, movie_data, intent_state):
     """For a given message input a text response is returned along with the filtered dataframe.
     Use this with the tts and stt functions
 
@@ -202,28 +225,32 @@ def get_response(message, movie_data):
         str: the response message
     """
     intent = get_prediction(message).lower()
-    message_arr = message.split(' ')
-    # intent_list = df['Label'].unique()
-    response = 'Sorry, could you repeat that again'
-    if intent == 'start':
-      response = 'Hello, ask me for movie recommendations!'
-    elif intent == 'question':
-      response = 'What genre would you like?'
-    elif intent == 'genre':
-      movie_data = find_keywords_field(movie_data, message_arr, 'Genre', 'VALUE')
-      response = 'how old should the movie be?'
-    elif intent == 'time':
-      movie_data = find_keywords_field(movie_data, message_arr, 'Year', 'RELATIVE')
-      response = 'how rated should the movie be'
-    elif intent == 'cast':
-      movie_data = find_keywords_field(movie_data, message_arr, 'Actors', 'VALUE')
-      response = 'We have shortlisted some movies for you!'
-    elif intent == 'rating':
-      movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
-      response = 'whose movies would you like to watch'
-    elif intent == 'end':
-      response = 'Goodbye!'
-    return response, movie_data
+    if intent != CHATBOT_SEQUENCE[intent_state].lower():
+      response = 'Sorry, could you repeat that again'
+    else:
+      message_arr = message.split(' ')
+      # intent_list = df['Label'].unique()
+      # response = 'Sorry, could you repeat that again'
+      if intent == 'start':
+        response = 'Hello, ask me for movie recommendations!'
+      elif intent == 'question':
+        response = 'What genre would you like?'
+      elif intent == 'genre':
+        movie_data = find_keywords_field(movie_data, message_arr, 'Genre', 'VALUE')
+        response = 'how old should the movie be?'
+      elif intent == 'time':
+        movie_data = find_keywords_field(movie_data, message_arr, 'Year', 'RELATIVE')
+        response = "whose movie would you like to watch?"
+      elif intent == 'cast':
+        movie_data = find_keywords_field(movie_data, message_arr, 'Director', 'VALUE')
+        response = 'how good should the movie be?'
+      elif intent == 'rating':
+        movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
+        response = 'ok! Here are some recommendations for you: '
+      elif intent == 'end':
+        response = get_film_title(movie_data)
+      intent_state += 1
+    return response, movie_data, intent_state
 
 
 def get_response_text_input(): 
@@ -254,4 +281,3 @@ def get_response_text_input():
       print(response)
       return movie_data
     print(response)
-
