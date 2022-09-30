@@ -201,6 +201,7 @@ def train():
 train_losses=[]
 train_acc_arr = []
 test_acc_arr = []
+best_accuracy = 0
 # number of training epochs
 epochs = 200
 print('train_losses len =', len(train_losses))
@@ -228,8 +229,11 @@ for epoch in range(epochs):
         test_acc += (predicted == labels).sum().item()
     test_acc /= test_size
     test_acc_arr.append(test_acc)
+    if test_acc >= best_accuracy:
+        torch.save(model.state_dict(), './trained_models/Task3_CNN_model.pkl')
+        best_accuracy = test_acc
 
-torch.save(model.state_dict(), './trained_models/task_nlp_trained.pkl')
+# torch.save(model.state_dict(), './trained_models/task_nlp_trained.pkl')
 
 plt.plot([epoch for epoch in range(epochs)], train_losses)
 plt.title('Loss vs Epochs')
