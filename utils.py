@@ -243,7 +243,10 @@ def get_response(message, movie_data, intent_state):
         str: the response message
     """
     intent = get_prediction(message).lower()
-    if intent != CHATBOT_SEQUENCE[intent_state].lower():
+    if intent == 'end':
+      response = 'Goodbye'
+      intent_state = 0
+    elif intent != CHATBOT_SEQUENCE[intent_state].lower():
       response = 'Sorry, could you repeat that again'
     else:
       message_arr = message.split(' ')
@@ -273,6 +276,7 @@ def get_response(message, movie_data, intent_state):
           response = 'Sorry, no films matched your criteria!'
       elif intent == 'end':
         response = 'Goodbye'
+        intent_state = 0
       intent_state += 1
     return response, movie_data, intent_state
 
