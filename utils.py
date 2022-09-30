@@ -1,4 +1,3 @@
-from types import NoneType
 import numpy as np
 import pandas as pd
 import re
@@ -255,19 +254,19 @@ def get_response(message, movie_data, intent_state):
       elif intent == 'question':
         response = 'What genre would you like?'
       elif intent == 'genre':
-        if type(movie_data) != NoneType:
+        if type(movie_data) != type(None):
           movie_data = find_keywords_field(movie_data, message_arr, 'Genre', 'VALUE')
         response = 'how old should the movie be?'
       elif intent == 'time':
-        if type(movie_data) != NoneType:
+        if type(movie_data) != type(None):
           movie_data = find_keywords_field(movie_data, message_arr, 'Year', 'RELATIVE')
         response = "whose movie would you like to watch?"
       elif intent == 'cast':
-        if type(movie_data) != NoneType:
+        if type(movie_data) != type(None):
           movie_data = find_keywords_field(movie_data, message_arr, 'Director', 'VALUE')
         response = 'how good should the movie be?'
       elif intent == 'rating':
-        if type(movie_data) != NoneType:
+        if type(movie_data) != type(None):
           movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
           response = get_film_title(movie_data)
         else:
