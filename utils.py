@@ -1,3 +1,4 @@
+from types import NoneType
 import numpy as np
 import pandas as pd
 import re
@@ -17,12 +18,14 @@ from model import BERT_Arch, getBertModel
 
 # All the intents/classes the nlp model will be classified into
 df = pd.read_csv("./data/intents.csv")
+test_df = pd.read_csv("./data/test_intents.csv")
 movie_data = pd.read_csv('./data/movie_data.csv')
 # df.head()
 
 # Converting the labels into encodings
 le = LabelEncoder()
 df['Label_Encoded'] = le.fit_transform(df['Label'])
+test_df['Label_Encoded'] = le.fit_transform(test_df['Label'])
 df.head()
 # check class distribution
 df['Label_Encoded'].value_counts(normalize = True)
@@ -237,17 +240,23 @@ def get_response(message, movie_data, intent_state):
       elif intent == 'question':
         response = 'What genre would you like?'
       elif intent == 'genre':
-        movie_data = find_keywords_field(movie_data, message_arr, 'Genre', 'VALUE')
+        if type(movie_data) != NoneType:
+          movie_data = find_keywords_field(movie_data, message_arr, 'Genre', 'VALUE')
         response = 'how old should the movie be?'
       elif intent == 'time':
-        movie_data = find_keywords_field(movie_data, message_arr, 'Year', 'RELATIVE')
+        if type(movie_data) != NoneType:
+          movie_data = find_keywords_field(movie_data, message_arr, 'Year', 'RELATIVE')
         response = "whose movie would you like to watch?"
       elif intent == 'cast':
-        movie_data = find_keywords_field(movie_data, message_arr, 'Director', 'VALUE')
+        if type(movie_data) != NoneType:
+          movie_data = find_keywords_field(movie_data, message_arr, 'Director', 'VALUE')
         response = 'how good should the movie be?'
       elif intent == 'rating':
-        movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
-        response = get_film_title(movie_data)
+        if type(movie_data) != NoneType:
+          movie_data = find_keywords_field(movie_data, message_arr, 'Rating', 'RELATIVE')
+          response = get_film_title(movie_data)
+        else:
+          response = 'Sorry, no films matched your criteria!'
       elif intent == 'end':
         response = 'Goodbye'
       intent_state += 1

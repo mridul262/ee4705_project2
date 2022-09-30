@@ -20,7 +20,7 @@ from torchinfo import summary
 from sklearn.utils.class_weight import compute_class_weight
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
-from utils import df
+from utils import df, test_df
 
 class BERT_Arch(nn.Module):
    """
@@ -64,6 +64,7 @@ class BERT_Arch(nn.Module):
 
 # In this example we have used all the utterances for training purpose
 train_text, train_labels = df['Text'], df['Label_Encoded']
+test_text, test_labels = test_df['Text'], test_df['Label_Encoded']
 # Load the DistilBert tokenizer
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 # Import the DistilBert pretrained model
@@ -84,10 +85,23 @@ tokens_train = tokenizer(
     return_token_type_ids=False
 )
 
+tokens_test = tokenizer(
+    test_text.tolist(),
+    max_length = max_seq_len,
+    pad_to_max_length=True,
+    truncation=True,
+    return_token_type_ids=False
+)
+
 # for train set
 train_seq = torch.tensor(tokens_train['input_ids'])
 train_mask = torch.tensor(tokens_train['attention_mask'])
 train_y = torch.tensor(train_labels.tolist())
+
+# for test set
+test_seq = torch.tensor(tokens_test['input_ids'])
+test_mask = torch.tensor(tokens_test['attention_mask'])
+test_y = torch.tensor(test_labels.tolist())
 
 #define a batch size
 batch_size = 16
@@ -98,6 +112,15 @@ train_sampler = RandomSampler(train_data)
 # DataLoader for train set
 train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=batch_size)
 
+# wrap tensors
+test_data = TensorDataset(test_seq, test_mask, test_y)
+# sampler for sampling the data during testing
+test_sampler = RandomSampler(test_data)
+# DataLoader for test set
+test_dataloader = DataLoader(test_data, sampler=test_sampler, batch_size=batch_size)
+
+train_size = df.shape[0]
+test_size = test_df.shape[0]
 
 # freeze all the parameters. This will prevent updating of model weights during fine-tuning.
 for param in bert.parameters():
@@ -126,7 +149,7 @@ def train():
   
     model.train()
     total_loss = 0
-
+    train_acc = 0
     # empty list to save model predictions
     total_preds=[]
 
@@ -161,17 +184,23 @@ def train():
         # preds=preds.detach().cpu().numpy()
         # append the model predictions
         total_preds.append(preds.detach().numpy())
+        # train accuracy
+        _, train_predicted = torch.max(preds.data, 1)
+        train_acc += (train_predicted == labels).sum().item()
     # compute the training loss of the epoch
     avg_loss = total_loss / len(train_dataloader)
+    train_acc /= train_size
     
     # predictions are in the form of (no. of batches, size of batch, no. of classes).
     # reshape the predictions in form of (number of samples, no. of classes)
     total_preds  = np.concatenate(total_preds, axis=0)
     #returns the loss and predictions
-    return avg_loss, total_preds
+    return avg_loss, total_preds, train_acc
 
 # empty lists to store training and validation loss of each epoch
 train_losses=[]
+train_acc_arr = []
+test_acc_arr = []
 # number of training epochs
 epochs = 200
 print('train_losses len =', len(train_losses))
@@ -180,12 +209,31 @@ for epoch in range(epochs):
     print('\n Epoch {:} / {:}'.format(epoch + 1, epochs))
     
     #train model
-    train_loss, _ = train()
+    train_loss, _, train_acc = train()
     
     # append training and validation loss
     train_losses.append(train_loss)
+    train_acc_arr.append(train_acc)
     # it can make your experiment reproducible, similar to set  random seed to all options where there needs a random seed.
     # torch.backends.cudnn.deterministic = True
     # torch.backends.cudnn.benchmark = False
     print(f'\nTraining Loss: {train_loss:.3f}')
-print('train_losses len pt2 =', len(train_losses))
+    # ----------test----------
+    model.eval()
+    test_acc = 0.0
+    for step, batch in test_dataloader:
+        sent_id, mask, labels = batch
+        test_output = model(sent_id, mask)
+        _, predicted = torch.max(test_output.data, 1)
+        test_acc += (predicted == labels).sum().item()
+    test_acc /= test_size
+    test_acc_arr.append(test_acc)
+
+torch.save(model.state_dict(), './trained_models/task_nlp_trained.pkl')
+
+plt.plot([epoch for epoch in range(epochs)], train_losses)
+plt.title('Loss vs Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('Training Loss')
+plt.savefig('loss_entropy.png')
+# print(train_losses)
