@@ -60,7 +60,7 @@ KEYWORDS_TO_TIME = {
     'earliest': '<',
 }
 
-BENCHMARK_RATING = 7.5
+BENCHMARK_RATING = 7.49
 
 KEYWORDS_TO_RATING = {
     'good': '>',
@@ -129,6 +129,8 @@ def find_field_value(field, values, inputDataFrame):
         pandas.DataFrame: A pandas dataframe filtered by the values input to the function
     """
     returnData = inputDataFrame
+    if type(returnData) == type(None):
+      return returnData
     for value in values:
        returnData = returnData[returnData[field].str.contains(value + ',', regex=False)]
        if returnData.shape[0] == 0:
@@ -148,7 +150,11 @@ def find_relative_field(field, value, condition, inputDataFrame):
     Returns:
         pandas.DataFrame: A pandas dataframe filtered by the values input to the function
     """
+    if field == 'Time':
+      field = 'Year'
     returnData = inputDataFrame
+    if type(returnData) == type(None):
+      return returnData
     if (condition == '>'):
         returnData = returnData[(returnData[field] > value)]
     elif (condition == '<'):
@@ -173,18 +179,23 @@ def find_keywords_field(data_frame, message_arr, field, field_type):
     Returns:
         pandas.DataFrame: the DataFame containing the filtered movie data
     """
+    if field == 'Year':
+      field = 'Time'
+
     if field_type == 'VALUE':
         if field in field_dictonary:
             local_field_dict = field_dictonary[field]
             for i in message_arr:
                 if i in local_field_dict:
                     i = local_field_dict[i]
-                if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
-                    return find_field_value(field, [i.title()], data_frame)
+                trimmedDF = find_field_value(field, [i.title()], data_frame)
+                if type(trimmedDF) != type(None) and (trimmedDF.shape[0]) != 0:
+                    return trimmedDF
         else:
             for i in message_arr:
-                if(find_field_value(field, [i.title()], data_frame).shape[0]) != 0:
-                    return find_field_value(field, [i.title()], data_frame)
+                trimmedDF = find_field_value(field, [i.title()], data_frame)
+                if type(trimmedDF) != type(None) and (trimmedDF.shape[0]) != 0:
+                    return trimmedDF
     elif field_type == 'RELATIVE':
         if field in field_dictonary:
             local_field_dict = field_dictonary[field]
@@ -193,16 +204,20 @@ def find_keywords_field(data_frame, message_arr, field, field_type):
                     i = local_field_dict[i]
                     if field in field_benchmark_dictionary:
                         value = field_benchmark_dictionary[field]
-                        if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
-                            return find_relative_field(field, value, i, data_frame)
+                        trimmedDF = find_relative_field(field, value, i, data_frame)
+                        if type(trimmedDF) != type(None) and (trimmedDF.shape[0]) != 0:
+                            return trimmedDF
     else:
         for i in message_arr:
-            if(find_relative_field(field, value, i, data_frame).shape[0]) != 0:
-                return find_relative_field(field, value, i, data_frame)
+            trimmedDF = find_relative_field(field, value, i, data_frame)
+            if type(trimmedDF) != type(None) and (trimmedDF.shape[0]) != 0:
+                return trimmedDF
+
+    return None
 
 def get_film_title(movie_data):
   return_string = 'Here are some movies I\'d like to recommend: '
-  if movie_data and movie_data.shape[0] > 0:
+  if type(movie_data) != type(None) and movie_data.shape[0] > 0:
     total_rows = movie_data.shape[0]
     loop_range = min(total_rows, 3)
     # return a maximum of three movies

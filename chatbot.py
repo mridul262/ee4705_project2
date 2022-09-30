@@ -48,6 +48,8 @@ def main():
 
     # Read movie data for chatbot reference
     movieData = pd.read_csv('./data/movie_data.csv')
+    movieData['Year'] = pd.to_numeric(movieData['Year'])
+    movieData['Rating'] = pd.to_numeric(movieData['Rating'])
 
     # Prepare text to speech engine
     engine = pyttsx3.init()
@@ -67,6 +69,7 @@ def main():
             text = stream_context.finishStream()
 
             intent_state, movieData = getChatbotTextResponse(text, movieData, intent_state, engine)
+            print(movieData)
             stream_context = model.createStream()
  
 if __name__ == '__main__':
