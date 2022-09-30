@@ -1,0 +1,71 @@
+Text,Label
+Hey,Start
+Hello,Start
+Howdy,Start
+Start bot,Start
+Good afternoon,Start
+Good morning,Start
+Good day,Start
+Hi,Start
+Begin,Start
+Start,Start
+Give me movie,Question
+Can I have movie please,Question
+Master give doby movie,Question
+I want a movie,Question
+I would like a movie,Question
+Movie please please,Question
+films please,Question
+I wanna watch a film,Question
+omg I'm so bored right now can I have a movie please,Question
+can you suggest me something to watch?,Question
+Give me some action movies,Genre
+Adventure films,Genre
+Comedy perhaps?,Genre
+I'm in the mood for a scary movie,Genre
+Fantasy movies only,Genre
+Can I have some romantic films,Genre
+I feel like watching a drama,Genre
+Adventure films like Indiana Jones?,Genre
+I think I want to try biography movies,Genre
+Musicals seem interesting,Genre
+Last week,Time
+This week,Time
+Upcoming,Time
+Doesn’t matter,Time
+Oldest movies In the collection,Time
+Some latest movies,Time
+Any time is ok,Time
+What are the most recent films?,Time
+Old is gold!,Time
+Give me some classic films,Time
+5 out of 7,Rating
+Best Ever,Rating
+I don’t care,Rating
+Bad,Rating
+High rated movies,Rating
+Some of the worst ones cos they're hilarious!,Rating
+Decent movies?,Rating
+fairly good ones would be fine,Rating
+I don't know any kind of movie would be ok,Rating
+Fantastic movies,Rating
+Night Shyamalan movies,Cast
+James Cameron,Cast
+Christopher Nolan's films,Cast
+Clint Eastwood perhaps?,Cast
+I'm in the mood for some James Wan movies,Cast
+Quentin Tarantino films would be nice,Cast
+Stanley Kubrick would be good,Cast
+Michael Bay would be fun,Cast
+Anyone's films would be alright,Cast
+Steven Spielberg or anyone whose films are like his,Cast
+Ciao,End
+Ok that's it,End
+I'm done,End
+"I'm good, thanks",End
+see you,End
+talk to you later then,End
+thanks for the recommendation,End
+finish,End
+end bot,End
+that's all bot,End
